@@ -47,7 +47,7 @@ The rest of the paper is organized as follows: After the introductory part propo
 The selection operator described in \cite{tomov-01} consists of recursive descent and brute-force. There is a predefined depth of recursion levels. On each level of recursion, there is a genetic algorithm sub-population. The size of sub-populations is equal and it is also predefined. All individuals in the leaves of the recursive tree are randomly generated. The brute-force part of the algorithm consists of the fact that each individual mates with each other in the sub-population. Only the best-found individual is promoted to go in the higher sub-population. Each higher sub-population is fulfilled with individuals promoted from the lower levels. The proposed improvement in this selection procedure states that brute-force should be returned as many times as there is an improvement of the best-found individual (Algorithm \ref{algo01}). 
 
 \begin{algorithm}[tbp]
-\includegraphics[width=1.0\hsize]{fig01.eps}
+\includegraphics[width=0.7\hsize]{fig01.eps}
 \caption{Local search extension.}
 \label{algo01}
 \end{algorithm}
@@ -60,7 +60,6 @@ All experiments are done in 10000-dimensional solutions space. As benchmark func
 
 \begin{table*}[tbp]
 \caption{Calculation time [ms] for recursion level of 7 and population size of 11.}
-\centering
 \begin{tabular}{|@{\vrule width0ptheight9pt\enspace}l|c|c|c|c|c|c|}
 \hline
 \hfil\bf \backslashbox{Algorithm}{Funcition}  & \bf Michalewicz & \bf Ackley & \bf Schwefel & \bf Rastrigin & \bf Griewank \\
@@ -75,7 +74,6 @@ All experiments are done in 10000-dimensional solutions space. As benchmark func
 
 \begin{table*}[tbp]
 \caption{Number of fitness calculations for recursion level of 7 and population size of 11.}
-\centering
 \begin{tabular}{|@{\vrule width0ptheight9pt\enspace}l|c|c|c|c|c|c|}
 \hline
 \hfil\bf \backslashbox{Algorithm}{Funcition}  & \bf Michalewicz & \bf Ackley & \bf Schwefel & \bf Rastrigin & \bf Griewank \\
@@ -90,229 +88,87 @@ All experiments are done in 10000-dimensional solutions space. As benchmark func
 
 \begin{table*}[tbp]
 \caption{Suboptimal values found for recursion level of 7 and population size of 11.}
-\centering
 \begin{tabular}{|@{\vrule width0ptheight9pt\enspace}l|c|c|c|c|c|c|}
 \hline
-\hfil\bf \backslashbox{Algorithm}{Funcition}  & \bf Michalewicz & \bf Ackley & \bf Schwefel & \bf Rastrigin & \bf Griewank \\
+\hfil\bf \backslashbox{Algorithm}{Funcition}  & \bf Michalewicz & \bf Ackley & \bf Schwefel \\
 \hline
-\bf Local Search & -1484.7137949531716 & 21.09334816052046 & 3877924.0971615044 & 170204.87849875208 & 259918.15469527297 \\
+\bf Local Search & -1484.7137949531716 & 21.09334816052046 & 3877924.0971615044 \\
 \hline
-\bf Brute-Force & -1439.2296970724608 & 21.114702255301292 & 3919318.729777085 & 171780.33307271387 & 262621.61053178157 \\
+\bf Brute-Force & -1439.2296970724608 & 21.114702255301292 & 3919318.729777085 \\
+\hline
+\end{tabular}
+\begin{tabular}{|@{\vrule width0ptheight9pt\enspace}l|c|c|c|c|c|c|}
+\hline
+\hfil\bf \backslashbox{Algorithm}{Funcition}  & \bf Rastrigin & \bf Griewank \\
+\hline
+\bf Local Search & 170204.87849875208 & 259918.15469527297 \\
+\hline
+\bf Brute-Force & 171780.33307271387 & 262621.61053178157 \\
 \hline
 \end{tabular}
 \label{tab03}
 \end{table*}
 
-Suboptimal values achieved by both algorithms are presented in Fig. \ref{fig01}-\ref{fig10}. The presented information includes all experimental combinations of recursive descent levels and population sizes. Fig. \ref{fig11}-\ref{fig20} show computational time used. Fig. \ref{fig21}-\ref{fig30} show number of evaluations done during optimization process. Table \ref{tab03} shows suboptimal values found by both algorithms for the configuration of recursive descent 7 and population size 11. Values achieved with the local search extension are closer to the global optimums.
+Suboptimal values achieved by both algorithms are presented in Fig. \ref{fig01}-\ref{fig02}. The presented information includes all experimental combinations of recursive descent levels and population sizes. Fig. \ref{fig03}-\ref{fig04} show computational time used. Fig. \ref{fig05}-\ref{fig06} show number of evaluations done during optimization process. Table \ref{tab03} shows suboptimal values found by both algorithms for the configuration of recursive descent 7 and population size 11. Values achieved with the local search extension are closer to the global optimums.
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig03.eps}
-\caption{Michalewicz - Local Search - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig03.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig06.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig09.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig12.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig15.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Local Search - Suboptimal Values}
 \label{fig01}
 \end{figure}
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig06.eps}
-\caption{Ackley - Local Search - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig18.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig21.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig24.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig27.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig30.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Brute Force - Suboptimal Values}
 \label{fig02}
 \end{figure}
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig09.eps}
-\caption{Schwefel - Local Search - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig02.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig05.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig08.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig11.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig14.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Local Search -Local Search - Time[ms]}
 \label{fig03}
 \end{figure}
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig12.eps}
-\caption{Rastrigin - Local Search - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig17.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig20.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig23.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig26.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig29.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Brute Force - Time[ms]}
 \label{fig04}
 \end{figure}
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig15.eps}
-\caption{Griewank - Local Search - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig04.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig07.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig10.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig13.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig16.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Local Search - Fitness Evaluations}
 \label{fig05}
 \end{figure}
 
 \begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig18.eps}
-\caption{Michalewicz - Brute Force - Suboptimal Values}
+  \includegraphics[width=.3\linewidth]{fig19.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig22.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig25.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig28.eps}\hfill
+  \includegraphics[width=.3\linewidth]{fig31.eps}\hfill
+\caption{Michalewicz, Ackley, Schwefel, Rastrigin, Griewank \hspace{\textwidth} Brute Force - Fitness Evaluations}
 \label{fig06}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig21.eps}
-\caption{Ackley - Brute Force - Suboptimal Values}
-\label{fig07}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig24.eps}
-\caption{Schwefel - Brute Force - Suboptimal Values}
-\label{fig08}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig27.eps}
-\caption{Rastrigin - Brute Force - Suboptimal Values}
-\label{fig09}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig30.eps}
-\caption{Griewank - Brute Force - Suboptimal Values}
-\label{fig10}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig02.eps}
-\caption{Michalewicz - Local Search - Time[ms]}
-\label{fig11}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig05.eps}
-\caption{Ackley - Local Search - Time[ms]}
-\label{fig12}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig08.eps}
-\caption{Schwefel - Local Search - Time[ms]}
-\label{fig13}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig11.eps}
-\caption{Rastrigin - Local Search - Time[ms]}
-\label{fig14}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig14.eps}
-\caption{Griewank - Local Search - Time[ms]}
-\label{fig15}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig17.eps}
-\caption{Michalewicz - Brute Force - Time[ms]}
-\label{fig16}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig20.eps}
-\caption{Ackley - Brute Force - Time[ms]}
-\label{fig17}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig23.eps}
-\caption{Schwefel - Brute Force - Time[ms]}
-\label{fig18}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig26.eps}
-\caption{Rastrigin - Brute Force - Time[ms]}
-\label{fig19}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig29.eps}
-\caption{Griewank - Brute Force - Time[ms]}
-\label{fig20}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig04.eps}
-\caption{Michalewicz - Local Search - Fitness Evaluations}
-\label{fig21}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig07.eps}
-\caption{Ackley - Local Search - Fitness Evaluations}
-\label{fig22}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig10.eps}
-\caption{Schwefel - Local Search - Fitness Evaluations}
-\label{fig23}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig13.eps}
-\caption{Rastrigin - Local Search - Fitness Evaluations}
-\label{fig24}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig16.eps}
-\caption{Griewank - Local Search - Fitness Evaluations}
-\label{fig25}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig19.eps}
-\caption{Michalewicz - Brute Force - Fitness Evaluations}
-\label{fig26}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig22.eps}
-\caption{Ackley - Brute Force - Fitness Evaluations}
-\label{fig27}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig25.eps}
-\caption{Schwefel - Brute Force - Fitness Evaluations}
-\label{fig28}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig28.eps}
-\caption{Rastrigin - Brute Force - Fitness Evaluations}
-\label{fig29}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=1.0\hsize,height=0.65\hsize]{fig31.eps}
-\caption{Griewank - Brute Force - Fitness Evaluations}
-\label{fig30}
 \end{figure}
 
 \section{Conclusion}
